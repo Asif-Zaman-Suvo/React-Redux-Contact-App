@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+import MenuBar from './Components/MenuBar/MenuBar';
 
 function App() {
   return (
+
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <ToastContainer />
+      <MenuBar/>
+
+      <Switch>
+        <Route exact path="/">
+        <h1>Welcome To React-Redux-Contact-App</h1>
+
+        </Route>
+
+        <Route path="/add">
+          <h1> I am add component </h1>
+
+        </Route>
+
+        <Route to='/edit/id:'>
+          <h1>I am edit component</h1>
+
+        </Route>
+
+      </Switch>
+    
     </div>
+
+    </Router>
   );
 }
 
