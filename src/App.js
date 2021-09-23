@@ -3,11 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import AddContact from './Components/AddContact/AddContact';
+import Homepage from './Components/Homepage/Homepage';
 import MenuBar from './Components/MenuBar/MenuBar';
+import EditContact from './Components/EditContact/EditContact';
 
 function App() {
   return (
@@ -20,18 +22,17 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-        <h1>Welcome To React-Redux-Contact-App</h1>
-
+          <Homepage></Homepage>
+        
         </Route>
 
         <Route path="/add">
-          <h1> I am add component </h1>
+          <AddContact/>
 
         </Route>
 
-        <Route to='/edit/id:'>
-          <h1>I am edit component</h1>
-
+        <Route exact path='/edit/:id'>
+          <EditContact/>
         </Route>
 
       </Switch>
