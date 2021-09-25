@@ -10,10 +10,17 @@ import AddContact from './Components/AddContact/AddContact';
 import Homepage from './Components/Homepage/Homepage';
 import MenuBar from './Components/MenuBar/MenuBar';
 import EditContact from './Components/EditContact/EditContact';
+import { createStore } from 'redux';
+import contactReducer from './Redux/reducers/contactReducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { Provider } from 'react-redux';
+
+
+const store = createStore(contactReducer,composeWithDevTools());
 
 function App() {
   return (
-
+  <Provider store={store}>
     <Router>
     <div className="App">
 
@@ -40,6 +47,8 @@ function App() {
     </div>
 
     </Router>
+  </Provider>
+    
   );
 }
 
