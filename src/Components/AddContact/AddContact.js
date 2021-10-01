@@ -42,7 +42,7 @@ const AddContact = () => {
 
 
         const data = {
-            id: contacts[contacts.length - 1].id + 1,
+            id: contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 0,
             name,
             email,
             number
